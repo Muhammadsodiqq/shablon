@@ -3,7 +3,8 @@ import userController from "../controllers/userController.js"
 
 const router = Express.Router();
 
-router.get("/", userController.getExample);
+router.post("/sign-up", userController.SignUp);
+router.post("/login", userController.code_validation);
 
 
 export default {
