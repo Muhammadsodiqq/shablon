@@ -5,9 +5,7 @@ dotenv.config();
 
 const sequelize = new Sequelize(process.env.DB_STRING, {
   // logging: false,
-  define: {
-    freezeTableName: true,
-  },
+  
 });
 
 
@@ -64,7 +62,7 @@ async function data() {
         allowNull:false
       }
     })
-    // await db.photo.sync({force:true})
+    await sequelize.sync({force:true})
     return db;
     
   } catch (error) {
